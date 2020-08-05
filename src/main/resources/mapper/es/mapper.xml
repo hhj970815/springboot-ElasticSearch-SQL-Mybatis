@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatises.demo.dao.es.RwTradeMapper">
+    <select id="queryByCuscode" parameterType="com.mybatises.demo.entity.UserTag" resultType="java.lang.String">
+        select
+          cuscode
+        from
+          tag_customer_wide_es
+        WHERE 1=1
+        <if test="cuscode != null and cuscode != ''">
+            AND cuscode = #{cuscode}
+        </if>
+        <if test="is_blank != null and is_blank != ''">
+            AND is_blank = #{is_blank}
+        </if>
+        <if test="province != null and province != ''">
+            AND province = #{province}
+        </if>
+        <if test="phone != null and phone != ''">
+            AND phone = #{phone}
+        </if>
+        <if test="issue_type != null and issue_type != ''">
+            AND issue_type = #{issue_type}
+        </if>
+        <if test="orders_times != null and orders_times != ''">
+            AND orders_times = #{orders_times}
+        </if>
+        <if test="orders_money != null and orders_money != ''">
+            AND orders_money = #{orders_money}
+        </if>
+        <if test="first_order_time != null and first_order_time != ''">
+            AND first_order_time = #{first_order_time}
+        </if>
+        <if test="first_order_platform != null and first_order_platform != ''">
+            AND first_order_platform = #{first_order_platform}
+        </if>
+        <if test="last_order_time != null and last_order_time != ''">
+            AND last_order_time = #{last_order_time}
+        </if>
+        <if test="last_order_platform != null and last_order_platform != ''">
+            AND last_order_platform = #{last_order_platform}
+        </if>
+        <if test="drawback_times != null and drawback_times != ''">
+            AND drawback_times = #{drawback_times}
+        </if>
+        <if test="last_highest_sku != null and last_highest_sku != ''">
+            AND last_highest_sku = #{last_highest_sku}
+        </if>
+        <if test="price != null and price != ''">
+            AND price = #{price}
+        </if>
+        <if test="chronic_sku != null and chronic_sku != ''">
+            AND chronic_sku = #{chronic_sku}
+        </if>
+        <if test="chronic_times != null and chronic_times != ''">
+            AND chronic_times = #{chronic_times}
+        </if>
+        <if test="chronic_money != null and chronic_money != ''">
+            AND chronic_money = #{chronic_money}
+        </if>
+        <if test="chronic_dept != null and chronic_dept != ''">
+            AND chronic_dept = #{chronic_dept}
+        </if>
+        <if test="chronic_last_time != null and chronic_last_time != ''">
+            AND chronic_last_time = #{chronic_last_time}
+        </if>
+        <if test="chronic_first_time != null and chronic_first_time != ''">
+            AND chronic_first_time = #{chronic_first_time}
+        </if>
+        <if test="chronic_pre_time != null and chronic_pre_time != ''">
+            AND chronic_pre_time = #{chronic_pre_time}
+        </if>
+        <if test="cus_active != null and cus_active != ''">
+            AND cus_active = #{cus_active}
+        </if>
+        <if test="cus_type != null and cus_type != ''">
+            AND cus_type = #{cus_type}
+        </if>
+        <if test="cus_val != null and cus_val != ''">
+            AND cus_val = #{cus_val}
+        </if>
+        <if test="cus_ltv != null and cus_ltv != ''">
+            AND cus_ltv = #{cus_ltv}
+        </if>
+        <if test="cus_active_chronic != null and cus_active_chronic != ''">
+            AND cus_active_chronic = #{cus_active_chronic}
+        </if>
+        <if test="cus_type_chronic != null and cus_type_chronic != ''">
+            AND cus_type_chronic = #{cus_type_chronic}
+        </if>
+        <if test="cus_val_chronic != null and cus_val_chronic != ''">
+            AND cus_val_chronic = #{cus_val_chronic}
+        </if>
+        <if test="cus_ltv_chronic != null and cus_ltv_chronic != ''">
+            AND cus_ltv_chronic = #{cus_ltv_chronic}
+        </if>
+        <if test="acc_points != null and acc_points != ''">
+            AND acc_points = #{acc_points}
+        </if>
+        <if test="sign_times != null and sign_times != ''">
+            AND sign_times = #{sign_times}
+        </if>
+        <if test="last_msgmark_time != null and last_msgmark_time != ''">
+            AND last_msgmark_time = #{last_msgmark_time}
+        </if>
+        <if test="mark_times != null and mark_times != ''">
+            AND mark_times = #{mark_times}
+        </if>
+
+    </select>
+
+    <select id="queryByProvince" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT
+          cuscode
+        FROM
+          tag_customer_wide_es
+        WHERE province = #{province}
+        Limit 10
+    </select>
+</mapper>
