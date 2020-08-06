@@ -20,4 +20,8 @@ public class QueryService {
     public List<String> queryByProvince(String province) {
         return rwTradeMapper.queryByProvince(province);
     }
+
+    public Long queryCount(UserTag userTag) {
+        return rwTradeMapper.queryCount(userTag);
+    }
 }

@@ -8,6 +8,7 @@
         <!-- 打印查询语句 -->
         <setting name="logImpl" value="STDOUT_LOGGING" />
         <setting name="useColumnLabel" value="false" />
+        <!--可接受为null的值-->
         <setting name="jdbcTypeForNull" value="NULL"/>
     </settings>
 </configuration>
