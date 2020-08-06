@@ -115,6 +115,6 @@
         FROM
           tag_customer_wide_es
         WHERE province = #{province}
-        Limit 10
+--         Limit 10
     </select>
 </mapper>
