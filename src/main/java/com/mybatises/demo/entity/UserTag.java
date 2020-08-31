@@ -3,12 +3,11 @@ package com.mybatises.demo.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
  * @author huanghuajie
- * 封装前端过来的json数据
+ * 封装前端过来的数据
  */
 @Data
 @AllArgsConstructor
@@ -26,19 +25,31 @@ public class UserTag {
     // 地区-省
     private String province;
 
+    // 手机号码
     private Long phone;
 
+    // 疾病类型
     private String issue_type;
 
     private Integer orders_times;
 
     private Double orders_money;
 
+    // 首次下单时间
     private String first_order_time;
+
+    private String first_order_time_begin;
+
+    private String first_order_time_end;
 
     private String first_order_platform;
 
+    // 最近一次下订单时间
     private String last_order_time;
+
+    private String last_order_time_begin;
+
+    private String last_order_time_end;
 
     private String last_order_platform;
 
@@ -56,11 +67,26 @@ public class UserTag {
 
     private String chronic_dept;
 
+    // 最近一次购买时间--慢病
     private String chronic_last_time;
 
+    private String chronic_last_time_begin;
+
+    private String chronic_last_time_end;
+
+    // 首次购买时间--慢病
     private String chronic_first_time;
 
+    private String chronic_first_time_begin;
+
+    private String chronic_first_time_end;
+
+    // 预计购买时间--慢病
     private String chronic_pre_time;
+
+    private String chronic_pre_time_begin;
+
+    private String chronic_pre_time_end;
 
     private String cus_active;
 
@@ -82,46 +108,12 @@ public class UserTag {
 
     private Integer sign_times;
 
+    // 最近一次营销时间
     private String last_msgmark_time;
 
-    private Integer mark_times;
+    private String last_msgmark_time_begin;
 
-    @Override
-    public String toString() {
-        return "UserTag: {" +
-                "cuscode=" + cuscode +
-                ", is_blank='" + is_blank + '\'' +
-                ", province='" + province + '\'' +
-                ", phone=" + phone +
-                ", issue_type='" + issue_type + '\'' +
-                ", orders_times=" + orders_times +
-                ", orders_money=" + orders_money +
-                ", first_order_time='" + first_order_time + '\'' +
-                ", first_order_platform='" + first_order_platform + '\'' +
-                ", last_order_time='" + last_order_time + '\'' +
-                ", last_order_platform='" + last_order_platform + '\'' +
-                ", drawback_times=" + drawback_times +
-                ", last_highest_sku='" + last_highest_sku + '\'' +
-                ", price=" + price +
-                ", chronic_sku='" + chronic_sku + '\'' +
-                ", chronic_times=" + chronic_times +
-                ", chronic_money=" + chronic_money +
-                ", chronic_dept='" + chronic_dept + '\'' +
-                ", chronic_last_time='" + chronic_last_time + '\'' +
-                ", chronic_first_time='" + chronic_first_time + '\'' +
-                ", chronic_pre_time='" + chronic_pre_time + '\'' +
-                ", cus_active='" + cus_active + '\'' +
-                ", cus_type='" + cus_type + '\'' +
-                ", cus_val='" + cus_val + '\'' +
-                ", cus_ltv='" + cus_ltv + '\'' +
-                ", cus_active_chronic='" + cus_active_chronic + '\'' +
-                ", cus_type_chronic='" + cus_type_chronic + '\'' +
-                ", cus_val_chronic='" + cus_val_chronic + '\'' +
-                ", cus_ltv_chronic='" + cus_ltv_chronic + '\'' +
-                ", acc_points=" + acc_points +
-                ", sign_times=" + sign_times +
-                ", last_msgmark_time='" + last_msgmark_time + '\'' +
-                ", mark_times=" + mark_times +
-                '}';
-    }
+    private String last_msgmark_time_end;
+
+    private Integer mark_times;
 }
