@@ -1,5 +1,6 @@
 package com.mybatises.demo.controller;
 
+import com.mybatises.demo.entity.Person;
 import com.mybatises.demo.entity.ResVo;
 import com.mybatises.demo.entity.UserTag;
 import com.mybatises.demo.service.QueryService;
@@ -11,6 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/query")
 public class QueryController {
+
+
 
     @Autowired
     QueryService queryService;
@@ -35,9 +38,11 @@ public class QueryController {
 
     @RequestMapping(value = "/count", method = RequestMethod.POST)
     public Long queryCount(UserTag userTag) {
-
         return queryService.queryCount(userTag);
     }
 
-
+    @RequestMapping(value = "/impala", method = RequestMethod.GET)
+    public List<Person> queryAll(){
+        return queryService.queryAll();
+    }
 }

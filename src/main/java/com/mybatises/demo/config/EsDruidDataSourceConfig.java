@@ -18,7 +18,7 @@ import java.util.Properties;
 @MapperScan(basePackages = {"com.mybatises.demo.dao.es"}, sqlSessionFactoryRef = "esSqlSessionFactory")
 public class EsDruidDataSourceConfig {
 
-    @Value("${spring.datasource.es.configLocation}")
+    @Value("${spring.datasource.configLocation}")
     private String configLocation;
 
     @Value("${spring.datasource.es.mapperLocations}")
